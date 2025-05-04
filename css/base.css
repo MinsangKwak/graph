@@ -1,0 +1,259 @@
+/* Modern Flat Design inspired by lightroomseoul.com - Updated Buttons & Inputs */
+@charset "UTF-8";
+:root {
+	--bg-color: #ffffff;
+	--text-color: #1a1a1a;
+	--subtext-color: #555555;
+	--accent-color: #202020;
+	--border-color: #e0e0e0;
+	--font-base: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic",
+		sans-serif;
+	--font-size-base: 14px;
+}
+
+/* Reset & Base */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: var(--font-base);
+	font-size: var(--font-size-base);
+	color: var(--text-color);
+	background-color: var(--bg-color);
+	line-height: 1.6;
+	padding: 0;
+}
+.hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+/* s: heading text */
+h1,
+h2,
+h3,
+th {
+	font-weight: 700;
+	color: #111;
+	margin: 0;
+}
+/* e: heading text */
+
+/* s: button */
+.btn-container {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+button {
+	font-family: inherit;
+	font-size: 13px;
+	font-weight: 600;
+	color: #ffffff;
+	background-color: var(--accent-color);
+	border: none;
+	border-radius: 6px;
+	padding: 8px 14px;
+	cursor: pointer;
+	transition: background-color 0.2s ease, transform 0.1s ease;
+}
+button:hover {
+	background-color: darken(var(--accent-color), 10%);
+}
+button:active {
+	transform: scale(0.97);
+}
+.btn-outline {
+	background-color: transparent;
+	color: var(--accent-color);
+	border: 2px solid var(--accent-color);
+	padding: 6px 12px;
+}
+.btn-sm {
+	font-size: 12px;
+	padding: 4px 10px;
+}
+/* e: button */
+
+/* s: input */
+.input-wrapper {
+	display: flex;
+	gap: 16px;
+	align-items: flex-start;
+}
+.input-item {
+	position: relative;
+	flex: 1;
+}
+.input-item .input-text {
+	width: 100%;
+	padding: 10px 12px;
+	font-size: 13px;
+	color: var(--text-color);
+	border: 1px solid var(--border-color);
+	border-radius: 6px;
+	background-color: #fafafa;
+	outline: none;
+	transition: border-color 0.2s ease;
+}
+.input-item .input-text:focus {
+	border-color: var(--accent-color);
+}
+.input-item .input-label {
+	position: absolute;
+	top: 10px;
+	left: 12px;
+	font-size: 12px;
+	color: var(--subtext-color);
+	background: #fff;
+	padding: 0 4px;
+	pointer-events: none;
+	transition: transform 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+.input-item input:focus + .input-label,
+.input-item input:not(:placeholder-shown) + .input-label {
+	transform: translateY(-140%) scale(0.9);
+	color: var(--accent-color);
+}
+/* e: input */
+
+/* s: textarea */
+.code-editor {
+	font-family: "Pretendard", monospace;
+	background-color: #f0f0f0;
+	border: 1px solid #aaa;
+	padding: 1rem;
+	width: 100%;
+	box-sizing: border-box;
+	resize: vertical;
+}
+
+textarea {
+	font-family: inherit;
+	padding: 6px;
+	border: 1px solid #aaa;
+	box-sizing: border-box;
+	width: 100%;
+	margin-bottom: 0.5rem;
+}
+/* e: textarea */
+
+/* s: table */
+.table-container {
+	width: 100%;
+	margin-bottom: 2rem;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+table th,
+table td {
+	border-bottom: 1px solid #ddd;
+	padding: 0.6rem 0;
+	font-size: 1.2rem;
+}
+
+table th {
+	background-color: #ddd;
+}
+/* e: table */
+
+/* s: chart */
+.chart-wrapper {
+	display: flex;
+	align-items: flex-end;
+	position: relative;
+	margin-bottom: 20px;
+}
+.chart-wrapper::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #111;
+	z-index: 0;
+}
+
+/* 왼쪽 Y축 라벨 영역 */
+.chart-axis-y {
+	width: 40px;
+	height: 150px;
+	position: sticky;
+	left: 0;
+	z-index: 2;
+	background-color: #fff;
+	border-right: 2px solid black;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding-right: 4px;
+	font-size: 12px;
+}
+
+/* Y축 라벨 */
+.y-label {
+	position: relative;
+}
+.y-label.y-100 {
+	transform: translateY(-6px);
+}
+.y-label.y-0 {
+	transform: translateY(6px);
+}
+
+/* 가로 스크롤 영역 */
+.chart-scroll-x {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	width: 100%;
+	position: relative;
+	transform: translateY(34px);
+}
+
+/* 차트 내부 */
+#chart.chart {
+	display: flex;
+	align-items: flex-end;
+	gap: 20px;
+	min-width: fit-content;
+	height: 150px;
+	padding: 0 10px;
+}
+
+/* 막대와 라벨을 묶는 그룹 */
+.chart-bar-group {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	width: 40px;
+}
+
+/* 막대 */
+.chart-bar {
+	width: 100%;
+	background-color: #ddd;
+	transition: height 0.2s ease;
+}
+
+/* X축 아래 숫자 */
+.chart-label {
+	margin-top: 4px;
+	font-size: 12px;
+}
+/* e: chart */

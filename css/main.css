@@ -1,0 +1,64 @@
+@charset "UTF-8";
+@import "base.css";
+
+.page-main {
+	padding: 0 2rem;
+}
+.page-main > section {
+	margin-bottom: 4rem;
+}
+.page-main .title {
+	font-weight: 800;
+	font-size: 2.2rem;
+	margin-bottom: 1rem;
+}
+.page-main .title-detail {
+	display: block;
+	text-align: right;
+	font-size: 1.4rem;
+}
+.page-main .sub-title {
+	font-weight: 800;
+	font-size: 1.6rem;
+	margin-bottom: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 10px;
+}
+.page-main .info-text {
+	display: inline-block;
+	font-weight: 400;
+	font-size: 1.4rem;
+	color: #ff0000;
+}
+
+.page-main .btn-container {
+	margin-top: 1rem;
+	padding: 0;
+}
+
+.page-main .input-number {
+	display: inline-block;
+	width: 100px;
+	font-size: 1.2rem;
+	text-align: center;
+	border: 0;
+	padding: 0;
+}
+
+.page-main .btn {
+	display: inline-block;
+	padding: 0;
+}
+.page-main .btn-outline {
+	background-color: #ffffff;
+	color: #111111;
+	border-radius: 4px;
+}
+
+.page-main .btn-sm {
+	width: 90px;
+	height: 40px;
+	font-size: 0.9rem;
+}
